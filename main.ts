@@ -1,8 +1,16 @@
-input.onPinPressed(TouchPin.P0, function () {
-    Count += 1
-    basic.showNumber(Count)
+input.onButtonPressed(Button.A, function () {
+    strip = neopixel.create(DigitalPin.P0, 64, NeoPixelMode.RGB)
+    strip.setBrightness(175)
+    strip.showRainbow(1, 360)
 })
-let Count = 0
-pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
-Count = 0
-basic.showNumber(Count)
+input.onGesture(Gesture.Shake, function () {
+    strip.clear()
+})
+let strip: neopixel.Strip = null
+strip = neopixel.create(DigitalPin.P0, 64, NeoPixelMode.RGB)
+strip.setBrightness(100)
+strip.showRainbow(1, 360)
+basic.forever(function () {
+    strip.rotate(1)
+    strip.show()
+})
