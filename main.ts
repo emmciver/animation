@@ -1,11 +1,11 @@
-basic.forever(function () {
-    basic.showIcon(IconNames.Happy)
-    basic.pause(100)
-    basic.showIcon(IconNames.Sad)
-    basic.pause(100)
-    basic.showIcon(IconNames.Confused)
-    basic.pause(100)
-    basic.showIcon(IconNames.Angry)
-    basic.pause(100)
-    basic.showIcon(IconNames.Asleep)
+input.onButtonPressed(Button.A, function () {
+    Count += 1
+    basic.showNumber(Count)
 })
+input.onButtonPressed(Button.B, function () {
+    Count = 0
+    basic.clearScreen()
+})
+let Count = 0
+Count = 0
+basic.showNumber(Count)
